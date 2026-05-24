@@ -6,7 +6,7 @@ export const HERO = {
 
 export const ABOUT = {
   description:
-    "I am a software developer working in the FinTech space, focused on backend APIs, payment workflows, SQL-driven systems, and cloud-native modernization using .NET and AWS.",
+    "I am a software developer working in the FinTech space, focused on backend APIs, payment workflows, and cloud-native modernization using .NET and AWS.",
 };
 
 export const PROJECTS = {
