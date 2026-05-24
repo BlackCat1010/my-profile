@@ -1,12 +1,16 @@
+"use client";
+
 import StyledLink from "@/components/StyledLink";
+import { track } from "@vercel/analytics";
 
 export default function Resume() {
     return (
-        <section id="contact" className="mx-auto max-w-5xl">
+        <section id="resume" className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold">Resume</h2>
             <StyledLink 
                 href="/resume.pdf" 
-                download 
+                download
+                onClick={() => track("Resume downloaded")}
                 >
             <svg 
                 className="h-5 w-5" 
