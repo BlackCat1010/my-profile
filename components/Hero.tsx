@@ -1,6 +1,6 @@
 export default function Hero() {
    return (
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center">
+      <section className="mx-auto flex max-w-5xl flex-col justify-center">
         <p className="mb-4 text-sm uppercase tracking-widest text-cyan-400">
           FinTech Software Developer
         </p>
