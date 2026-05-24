@@ -6,12 +6,13 @@ const projects = [
     {
         title: "News Scrapper",
         description: "A Simple News Scrapper scraping latest Singapore news",
+        projectUrl: "https://github.com/BlackCat1010/WebScrapper2_0",
         frameworksUsed: ["EFCore", "PuppeteerSharp", "HtmlAgilityPack"]
     }
 ]
 
 type TooltipState = {
-  text: string[];
+  text: string;
   x: number;
   y: number;
 };
@@ -30,38 +31,39 @@ export default function Projects() {
                         className="relative rounded-2xl border border-slate-800 bg-slate-900 p-6 hover:bg-slate-800 text-left"
                         onMouseMove={(event) => {
                             setTooltip({
-                                text: project.frameworksUsed,
+                                text: "Click to view more on GitHub",
                                 x: event.clientX,
                                 y: event.clientY,
                             })
                         }}
-                        onMouseLeave={() => {
-                            setTooltip(null);
-                        }}
+                        onMouseLeave={() => { setTooltip(null)}}
+                        onClick={() => window.open(project.projectUrl, "_blank")}
                     >
-                        <h3 className="text-xl font-semibold">{project.title}</h3>
-                        <p className="mt-4 text-sm leading-7 text-slate-300">
+                        <h3 className="text-xl font-semibold">
+                            {project.title}
+                        </h3>
+                        <p className="mt-4 text-sm italic leading-6 text-slate-400">
                             {project.description}
+                        </p>
+                        <p className="mt-5 text-xs uppercase tracking-[0.2em] text-slate-500">
+                            Frameworks used
+                        </p>
+                        <p className="mt-1 text-sm text-slate-300">
+                            {project.frameworksUsed.join(", ")}
                         </p>
                     </button>
                 ))}
             </div>
 
             {tooltip ? (
-                <div
-                    className="pointer-events-none fixed z-50 rounded bg-slate-800 px-3 py-2 text-sm text-white opacity-80"
-                    style={{ 
-                        left: tooltip.x,
-                        top: tooltip.y,
-                        transform: "none", 
-                    }}
-                >
-                    {tooltip.text.map((text, index) => (
-                        <div key={index}>{text}</div>
-                    ))}
-                </div>
-            ) : null
-            }
+            <div
+                className="pointer-events-none fixed z-50 rounded-xl bg-slate-900/95 px-3 py-2 text-sm text-white shadow-xl"
+                style={{ left: tooltip.x, top: tooltip.y, transform: "none" }}
+                role="tooltip"
+            >
+                {tooltip.text}
+            </div>
+            ) : null}
         </section>
     );
 }
