@@ -21,7 +21,7 @@ export default function Projects() {
     const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
     return (
-        <section id="projects" className="mx-auto max-w-5xl px-6 py-24">
+        <section id="projects" className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold">Projects</h2>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -57,7 +57,7 @@ export default function Projects() {
 
             {tooltip ? (
             <div
-                className="pointer-events-none fixed z-50 rounded-xl bg-slate-900/95 px-3 py-2 text-sm text-white shadow-xl"
+                className="pointer-events-none fixed z-50 rounded-xl bg-slate-900/95 text-sm text-white shadow-xl"
                 style={{ left: tooltip.x, top: tooltip.y, transform: "none" }}
                 role="tooltip"
             >

@@ -7,16 +7,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-    <main className="min-h-screen bg-slate-950 text-white">
-
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-
+    <main className="bg-slate-950 text-white">
+      <div className="mx-auto max-w-5xl px-6 py-12 space-y-16">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </div>
     </main>
-    </>
-    );
+  );
 }
